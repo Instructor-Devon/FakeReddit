@@ -1,0 +1,24 @@
+@model List<Post>
+<h2>All Posts:</h2>
+<h4><a href="/posts/new">Add a post...</a></h4>
+@foreach(var post in Model)
+{
+    int karma = post.Votes.Count(v => v.IsUpvote) - post.Votes.Count(v => !v.IsUpvote);
+
+    string username = (ViewBag.UserId == post.UserId) ? "You" : $"{post.Author.FirstName} {@post.Author.LastName}";
+    <div class="post">
+        <h3>@post.Title</h3>
+        <p>@post.Content</p>
+        <hr>
+        <h5>(Posted @post.CreatedAt.ToString("g") -by <a href="/@post.UserId">@username</a>)</h5>
+        @if(ViewBag.UserId == post.UserId)
+        {
+            <a href="/posts/delete/@post.PostId"><button class="btn btn-danger">DELETE</button></a>
+        }
+        <hr>
+        <h4>Karma: @karma</h4>
+        <a href="/votes/@post.PostId/@true"><button><i class="glyphicon glyphicon-arrow-up"></i></button></a>
+        <a href="/votes/@post.PostId/@false"><button><i class="glyphicon glyphicon-arrow-down"></i></button></a>
+        
+    </div>
+}

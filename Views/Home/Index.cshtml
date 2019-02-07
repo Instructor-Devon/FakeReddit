@@ -1,0 +1,54 @@
+@model LogRegModel
+<div class="jumbotron">
+
+<div class="user-form">
+    <h2>Login</h2>
+    <form action="/login" method="post" class="logreg">
+        
+        <div class="form-group">
+            <span asp-validation-for="Attempt.EmailAttempt"></span>
+            <label asp-for="Attempt.EmailAttempt"></label>
+            <input class="form-control" asp-for="Attempt.EmailAttempt">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Attempt.PasswordAttempt"></span>
+            <label asp-for="Attempt.PasswordAttempt"></label>
+            <input class="form-control" asp-for="Attempt.PasswordAttempt">
+        </div>
+    
+        <input class="btn btn-primary" type="submit" value="Login">
+    </form>
+
+</div>
+<div class="user-form">
+    <h2>Register</h2>
+    <form action="/create" method="post" class="logreg">
+        <div class="form-group">
+            <span asp-validation-for="NewUser.FirstName"></span>
+            <label asp-for="NewUser.FirstName"></label>
+            <input class="form-control" asp-for="NewUser.FirstName">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="NewUser.LastName"></span>
+            <label asp-for="NewUser.LastName"></label>
+            <input class="form-control" asp-for="NewUser.LastName">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="NewUser.Email"></span>
+            <label asp-for="NewUser.Email"></label>
+            <input class="form-control" asp-for="NewUser.Email">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="NewUser.Password"></span>
+            <label asp-for="NewUser.Password"></label>
+            <input class="form-control" asp-for="NewUser.Password">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="NewUser.Confirm"></span>
+            <label asp-for="NewUser.Confirm"></label>
+            <input class="form-control" asp-for="NewUser.Confirm">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Register">
+    </form>
+</div>
+</div>

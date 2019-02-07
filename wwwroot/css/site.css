@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(151, 151, 151);
+}
+
+.user-form {
+    display: inline-block;
+    margin: 10px;
+    width: 45%;
+    vertical-align: top;
+}
+
+.post {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: azure;
+
+}
+
+.post:hover{
+    background-color:linen;
+}

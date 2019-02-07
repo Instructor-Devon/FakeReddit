@@ -1,0 +1,17 @@
+@model User
+
+<h2>Details for @Model.FirstName @Model.LastName</h2>
+<hr>
+<h4>Number of published posts: @Model.PublishedPosts.Count</h4>
+<h4>Number of posts voted on: @Model.PostsVoted.Count</h4>
+<hr>
+<h2>This user has upvoted the following:</h2>
+@foreach(var vote in Model.PostsVoted.Where(v => v.IsUpvote))
+{
+    <p>@vote.VotedPost.Title</p>
+}
+<h2>This user has downvoted the following:</h2>
+@foreach(var vote in Model.PostsVoted.Where(v => !v.IsUpvote).Distinct())
+{
+    <p>@vote.VotedPost.Title</p>
+}
