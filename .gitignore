@@ -52,8 +52,6 @@ obj/
 
 .vscode/
 
-wwwroot/lib/
-
 TestResults/
 
 ###################
